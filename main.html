@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090b10" />
+  <meta name="description" content="Chinthan N — computer science student and software engineer interested in systems, AI, developer tools, and thoughtful software." />
+  <title>Chinthan N — Software Engineer & Builder</title>
+
+  <!-- Tailwind CDN keeps this portfolio easy to host on GitHub Pages. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#090b10',
+            panel: '#10141d',
+            line: '#242b38',
+            muted: '#98a2b3',
+            accent: '#a3e635',
+            violet: '#a78bfa'
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            mono: ['"IBM Plex Mono"', 'ui-monospace', 'monospace']
+          },
+          boxShadow: {
+            glow: '0 0 70px rgba(163,230,53,.10)'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root { color-scheme: dark; }
+    body {
+      background:
+        radial-gradient(ellipse at 75% 4%, rgba(124, 58, 237, .11), transparent 34rem),
+        radial-gradient(ellipse at 8% 26%, rgba(163, 230, 53, .055), transparent 30rem),
+        #090b10;
+    }
+    .grid-bg {
+      background-image: linear-gradient(rgba(148,163,184,.055) 1px, transparent 1px),
+                        linear-gradient(90deg, rgba(148,163,184,.055) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+    }
+    .glass { background: rgba(16,20,29,.76); backdrop-filter: blur(16px); }
+    .gradient-text {
+      background: linear-gradient(105deg, #f8fafc 10%, #bef264 58%, #c4b5fd 100%);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .card { transition: transform .22s ease, border-color .22s ease, background .22s ease; }
+    .card:hover { transform: translateY(-4px); border-color: rgba(163,230,53,.35); background: rgba(20,26,37,.92); }
+    .nav-link { color: #98a2b3; transition: color .2s ease; }
+    .nav-link:hover, .nav-link.active { color: #bef264; }
+    .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .mono-label { font-family: 'DM Mono', monospace; letter-spacing: .12em; text-transform: uppercase; }
+    ::selection { background: rgba(163,230,53,.28); color: white; }
+  </style>
+</head>
+<body class="font-sans text-slate-100 antialiased">
+  <div class="fixed inset-0 -z-10 grid-bg pointer-events-none"></div>
+
+  <!-- Navigation -->
+  <header class="fixed top-0 z-50 w-full border-b border-white/[0.06] glass">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="font-mono text-sm font-medium tracking-tight text-white">
+        <span class="text-accent">cn</span><span class="text-slate-500">/</span>builds
+      </a>
+      <div class="hidden items-center gap-8 text-sm md:flex">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#work">Projects</a>
+        <a class="nav-link" href="#stack">Toolkit</a>
+        <a class="nav-link" href="#interests">Interests</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+      <a href="mailto:nchinthan04@gmail.com" class="hidden rounded-full border border-accent/40 px-4 py-2 text-xs font-semibold text-accent transition hover:bg-accent hover:text-ink sm:inline-flex">
+        Let's talk <i data-lucide="arrow-up-right" class="ml-2 h-3.5 w-3.5"></i>
+      </a>
+      <button id="menuButton" class="rounded-lg border border-line p-2 text-slate-300 md:hidden" aria-label="Toggle navigation" aria-expanded="false">
+        <i data-lucide="menu" class="h-5 w-5"></i>
+      </button>
+    </nav>
+    <div id="mobileMenu" class="hidden border-t border-white/[0.06] px-5 py-4 md:hidden">
+      <div class="flex flex-col gap-4 text-sm">
+        <a class="nav-link" href="#about">About</a><a class="nav-link" href="#work">Projects</a>
+        <a class="nav-link" href="#stack">Toolkit</a><a class="nav-link" href="#interests">Interests</a>
+        <a class="nav-link" href="#contact">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="home">
+    <!-- Hero -->
+    <section class="relative mx-auto flex min-h-screen max-w-7xl items-center px-5 pb-20 pt-32 lg:px-8">
+      <div class="grid w-full items-center gap-14 lg:grid-cols-[1.25fr_.75fr]">
+        <div class="reveal">
+          <div class="mb-7 inline-flex items-center gap-2 rounded-full border border-accent/20 bg-accent/[0.07] px-3 py-1.5 font-mono text-[11px] text-accent">
+            <span class="relative flex h-2 w-2"><span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent opacity-50"></span><span class="relative inline-flex h-2 w-2 rounded-full bg-accent"></span></span>
+            BUILDING SYSTEMS, NOT JUST FEATURES
+          </div>
+          <p class="mono-label mb-4 text-xs text-slate-500">Hello, I'm Chinthan N</p>
+          <h1 class="max-w-4xl text-5xl font-extrabold leading-[1.06] tracking-[-0.055em] sm:text-6xl lg:text-7xl">
+            I turn <span class="gradient-text">complex ideas</span> into thoughtful software.
+          </h1>
+          <p class="mt-7 max-w-2xl text-base leading-8 text-slate-400 sm:text-lg">
+            Computer Science undergraduate at NIT Durgapur. I enjoy building developer tools,
+            AI-powered systems, and reliable software from the architecture down to the implementation.
+          </p>
+          <div class="mt-9 flex flex-wrap items-center gap-3">
+            <a href="#work" class="inline-flex items-center rounded-full bg-accent px-5 py-3 text-sm font-bold text-ink transition hover:bg-lime-300">
+              Explore my work <i data-lucide="arrow-down-right" class="ml-2 h-4 w-4"></i>
+            </a>
+            <a href="https://github.com/nchinthan" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-line px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-white/5">
+              <i data-lucide="github" class="mr-2 h-4 w-4"></i> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/chinthan-n-269819290" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-line px-5 py-3 text-sm font-semibold text-slate-200 transition hover:border-slate-500 hover:bg-white/5">
+              <i data-lucide="linkedin" class="mr-2 h-4 w-4"></i> LinkedIn
+            </a>
+          </div>
+          <div class="mt-14 flex flex-wrap gap-x-8 gap-y-4 border-t border-line pt-6 text-xs text-slate-500">
+            <span class="flex items-center gap-2"><i data-lucide="graduation-cap" class="h-4 w-4 text-accent"></i> NIT Durgapur</span>
+            <span class="flex items-center gap-2"><i data-lucide="code-2" class="h-4 w-4 text-accent"></i> Software / AI</span>
+            <span class="flex items-center gap-2"><i data-lucide="map-pin" class="h-4 w-4 text-accent"></i> India</span>
+          </div>
+        </div>
+
+        <!-- Decorative systems console -->
+        <div class="reveal relative mx-auto w-full max-w-md">
+          <div class="absolute -inset-8 rounded-full bg-violet-500/[0.08] blur-3xl"></div>
+          <div class="relative overflow-hidden rounded-2xl border border-line bg-[#0d1119] shadow-2xl shadow-black/40">
+            <div class="flex items-center justify-between border-b border-line px-5 py-4">
+              <div class="flex gap-1.5"><span class="h-2.5 w-2.5 rounded-full bg-rose-400/70"></span><span class="h-2.5 w-2.5 rounded-full bg-amber-300/70"></span><span class="h-2.5 w-2.5 rounded-full bg-accent/70"></span></div>
+              <span class="font-mono text-[10px] text-slate-600">chinthan@workstation ~</span>
+              <i data-lucide="terminal" class="h-4 w-4 text-slate-600"></i>
+            </div>
+            <div class="space-y-5 p-6 font-mono text-xs sm:p-7">
+              <div><span class="text-accent">❯</span> <span class="text-slate-300">whoami</span><p class="mt-2 pl-4 text-slate-500">curious engineer · systems thinker · builder</p></div>
+              <div><span class="text-accent">❯</span> <span class="text-slate-300">cat focus.txt</span>
+                <div class="mt-3 space-y-2 pl-4 text-slate-500">
+                  <p><span class="text-violet-300">01</span>  developer experience</p>
+                  <p><span class="text-violet-300">02</span>  applied AI & retrieval</p>
+                  <p><span class="text-violet-300">03</span>  systems & architecture</p>
+                  <p><span class="text-violet-300">04</span>  algorithms that scale</p>
+                </div>
+              </div>
+              <div><span class="text-accent">❯</span> <span class="text-slate-300">git status</span><p class="mt-2 pl-4 text-accent">● always learning, always building</p></div>
+              <div class="border-t border-line pt-4 text-[10px] text-slate-600">OPEN SOURCE MINDSET <span class="float-right">[ 2026 → ]</span></div>
+            </div>
+          </div>
+          <div class="absolute -bottom-5 -left-5 hidden rounded-xl border border-line bg-panel px-4 py-3 shadow-xl sm:block">
+            <p class="mono-label text-[9px] text-slate-600">Current mindset</p><p class="mt-1 text-xs font-semibold text-slate-200">Understand deeply. Build simply.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="scroll-mt-24 border-y border-line/70 bg-white/[0.015]">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-24 lg:grid-cols-[.7fr_1.3fr] lg:px-8">
+        <div class="reveal">
+          <p class="mono-label text-xs text-accent">01 / About</p>
+          <h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Curiosity is my <span class="text-slate-500">starting point.</span></h2>
+        </div>
+        <div class="reveal">
+          <p class="text-lg leading-8 text-slate-300">
+            I'm a Computer Science student at the <strong class="font-semibold text-white">National Institute of Technology Durgapur</strong>,
+            drawn to the engineering behind useful software. I like understanding a problem as a system:
+            its data structures, interfaces, constraints, failure modes, and the trade-offs that shape a good solution.
+          </p>
+          <p class="mt-5 leading-8 text-slate-400">
+            My work spans AI-assisted developer tooling, personal knowledge systems, media infrastructure,
+            and applied machine learning. I care about modularity, explicit boundaries, performance, and
+            designs that can evolve without rewriting the core.
+          </p>
+          <div class="mt-8 grid gap-4 sm:grid-cols-3">
+            <div class="rounded-xl border border-line bg-panel/70 p-4"><i data-lucide="layers-3" class="h-5 w-5 text-accent"></i><p class="mt-3 text-sm font-semibold">Modular by design</p><p class="mt-1 text-xs leading-5 text-slate-500">SRP, OCP, clean interfaces, extensible architecture.</p></div>
+            <div class="rounded-xl border border-line bg-panel/70 p-4"><i data-lucide="gauge" class="h-5 w-5 text-accent"></i><p class="mt-3 text-sm font-semibold">Performance-minded</p><p class="mt-1 text-xs leading-5 text-slate-500">Data structures, caching, retrieval, efficient pipelines.</p></div>
+            <div class="rounded-xl border border-line bg-panel/70 p-4"><i data-lucide="brain-circuit" class="h-5 w-5 text-accent"></i><p class="mt-3 text-sm font-semibold">Curiosity-led</p><p class="mt-1 text-xs leading-5 text-slate-500">From theoretical ideas to practical implementations.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="work" class="scroll-mt-24 mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="reveal flex flex-col justify-between gap-5 sm:flex-row sm:items-end">
+        <div><p class="mono-label text-xs text-accent">02 / Selected work</p><h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Things I've <span class="text-slate-500">built.</span></h2></div>
+        <p class="max-w-md text-sm leading-6 text-slate-500">A selection of projects exploring developer experience, retrieval, intelligent systems, and full-stack engineering.</p>
+      </div>
+
+      <div class="mt-12 grid gap-5 lg:grid-cols-2">
+        <article class="card reveal rounded-2xl border border-line bg-panel/70 p-6 sm:p-8">
+          <div class="flex items-start justify-between"><div class="flex h-11 w-11 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="scissors" class="h-5 w-5"></i></div><span class="mono-label text-[9px] text-slate-600">01 / Developer tooling</span></div>
+          <h3 class="mt-6 text-2xl font-bold">ContextPruner</h3><p class="mt-1 text-sm text-accent">Token-Efficient AI Coding & Controlled Code Editing</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">A hierarchical context-selection workflow that lets developers choose exactly which files, classes, and methods an AI coding tool receives—rather than sending entire repositories.</p>
+          <ul class="mt-5 space-y-2 text-xs leading-5 text-slate-500">
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent"></i>Language-agnostic TreeNode model with an extension-based parser registry.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent"></i>PromptTree for reusable, hierarchical instructions and code context.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-accent"></i>Post-edit diff inspection to catch changes outside the intended scope.</li>
+          </ul>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">AST / Parsing</span><span class="tag">LLM Tooling</span><span class="tag">OCP</span></div>
+        </article>
+
+        <article class="card reveal rounded-2xl border border-line bg-panel/70 p-6 sm:p-8">
+          <div class="flex items-start justify-between"><div class="flex h-11 w-11 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="brain" class="h-5 w-5"></i></div><span class="mono-label text-[9px] text-slate-600">02 / Knowledge systems</span></div>
+          <h3 class="mt-6 text-2xl font-bold">Personal Knowledge Engine</h3><p class="mt-1 text-sm text-violet-300">A self-hosted, AI-augmented note system</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">A personal knowledge base built around a Linux-inode-inspired storage engine, hierarchical notes, and a conversational retrieval pipeline.</p>
+          <ul class="mt-5 space-y-2 text-xs leading-5 text-slate-500">
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-300"></i>Page retrieval and hash-based chunk tracking to reduce write amplification.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-300"></i>RAG pipeline that vectorizes hierarchical notes on write.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-violet-300"></i>Radix Tree metadata lookup, MinHash, and k-shingling LSH deduplication.</li>
+          </ul>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="tag">Python</span><span class="tag">RAG</span><span class="tag">Radix Tree</span><span class="tag">MinHash / LSH</span></div>
+          <a class="mt-7 inline-flex items-center text-sm font-semibold text-slate-200 hover:text-accent" href="https://github.com/nchinthan/notes-wiki" target="_blank" rel="noreferrer">View repository <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i></a>
+        </article>
+
+        <article class="card reveal rounded-2xl border border-line bg-panel/70 p-6 sm:p-8">
+          <div class="flex items-start justify-between"><div class="flex h-11 w-11 items-center justify-center rounded-xl bg-sky-400/10 text-sky-300"><i data-lucide="audio-lines" class="h-5 w-5"></i></div><span class="mono-label text-[9px] text-slate-600">03 / Full-stack & media</span></div>
+          <h3 class="mt-6 text-2xl font-bold">Sangeetha</h3><p class="mt-1 text-sm text-sky-300">Personal Music Player & Recommendation Engine</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">A full-stack local music player with URL-to-audio conversion, metadata ingestion, and a low-latency chunk-based streaming backend.</p>
+          <ul class="mt-5 space-y-2 text-xs leading-5 text-slate-500">
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-sky-300"></i>Markov Chain recommendations with temperature-controlled sampling.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-sky-300"></i>Bloom Filters for duplicate detection and Radix Tree prefix search.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-sky-300"></i>Automated ingestion and metadata extraction using yt-dlp and APIs.</li>
+          </ul>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="tag">Django</span><span class="tag">MySQL</span><span class="tag">REST APIs</span><span class="tag">Markov Chains</span></div>
+          <a class="mt-7 inline-flex items-center text-sm font-semibold text-slate-200 hover:text-accent" href="https://github.com/nchinthan/sangeetha" target="_blank" rel="noreferrer">View repository <i data-lucide="arrow-up-right" class="ml-2 h-4 w-4"></i></a>
+        </article>
+
+        <article class="card reveal rounded-2xl border border-line bg-panel/70 p-6 sm:p-8">
+          <div class="flex items-start justify-between"><div class="flex h-11 w-11 items-center justify-center rounded-xl bg-amber-400/10 text-amber-300"><i data-lucide="sprout" class="h-5 w-5"></i></div><span class="mono-label text-[9px] text-slate-600">04 / Applied AI</span></div>
+          <h3 class="mt-6 text-2xl font-bold">Krishi Kiran</h3><p class="mt-1 text-sm text-amber-300">Community-Driven Agricultural Advisory</p>
+          <p class="mt-4 text-sm leading-7 text-slate-400">An AI-powered agricultural advisory platform developed for the Smart India Hackathon, designed around a continuous feedback loop with farmers.</p>
+          <ul class="mt-5 space-y-2 text-xs leading-5 text-slate-500">
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-300"></i>LSH clustering and community voting to prioritize similar feedback.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-300"></i>Multilingual support and region-aware mapping informed by local conditions.</li>
+            <li class="flex gap-2"><i data-lucide="check" class="mt-0.5 h-3.5 w-3.5 shrink-0 text-amber-300"></i>Weather and market-price integrations, irrigation and scheduling recommendations.</li>
+          </ul>
+          <div class="mt-7 flex flex-wrap gap-2"><span class="tag">Machine Learning</span><span class="tag">LSH</span><span class="tag">APIs</span><span class="tag">Geospatial</span></div>
+        </article>
+      </div>
+
+      <div class="reveal mt-8 rounded-2xl border border-dashed border-line p-6 sm:p-8">
+        <p class="mono-label text-[10px] text-slate-600">Also exploring</p>
+        <div class="mt-4 grid gap-5 sm:grid-cols-3">
+          <div><h3 class="font-semibold">CraftGraph</h3><p class="mt-1 text-xs leading-5 text-slate-500">Interactive resource and recipe DAGs for planning complex Minecraft builds and automation.</p></div>
+          <div><h3 class="font-semibold">Local Voice Assistant</h3><p class="mt-1 text-xs leading-5 text-slate-500">A modular, state-machine-inspired assistant for voice-driven notes and task management.</p></div>
+          <div><h3 class="font-semibold">Systems Programming</h3><p class="mt-1 text-xs leading-5 text-slate-500">A modular C++ terminal editor, rendering optimizations, and extensible state-driven interfaces.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Toolkit -->
+    <section id="stack" class="scroll-mt-24 border-y border-line/70 bg-white/[0.015]">
+      <div class="mx-auto max-w-7xl px-5 py-24 lg:px-8">
+        <div class="reveal"><p class="mono-label text-xs text-accent">03 / Toolkit</p><h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">Tools are useful. <span class="text-slate-500">Fundamentals matter more.</span></h2></div>
+        <div class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="braces" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Languages</h3><p class="mt-2 text-sm leading-6 text-slate-400">Python, C++, C, JavaScript, SQL, Bash</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="server" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Backend & Web</h3><p class="mt-2 text-sm leading-6 text-slate-400">Django, Flask, FastAPI, Node.js, REST, WebSockets</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="brain-circuit" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">AI / ML</h3><p class="mt-2 text-sm leading-6 text-slate-400">PyTorch, TensorFlow, Hugging Face, LangChain, RAG</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="database" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Data & Storage</h3><p class="mt-2 text-sm leading-6 text-slate-400">MySQL, MongoDB, Redis, vector databases</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="network" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">CS Foundations</h3><p class="mt-2 text-sm leading-6 text-slate-400">DSA, OOP, OS, Computer Networks, architecture</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="terminal" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Systems & DevOps</h3><p class="mt-2 text-sm leading-6 text-slate-400">Linux, Git, Docker, GitHub Actions, AWS S3 / EC2</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="workflow" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Engineering</h3><p class="mt-2 text-sm leading-6 text-slate-400">Modular design, dependency injection, OCP, pipelines</p></div>
+          <div class="reveal rounded-xl border border-line bg-panel/60 p-5"><i data-lucide="search" class="h-5 w-5 text-accent"></i><h3 class="mt-4 font-semibold">Algorithms</h3><p class="mt-2 text-sm leading-6 text-slate-400">Radix Trees, Bloom Filters, MinHash, LSH, retrieval</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interests -->
+    <section id="interests" class="scroll-mt-24 mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="reveal"><p class="mono-label text-xs text-accent">04 / Beyond the code</p><h2 class="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">A few things that <span class="text-slate-500">keep me curious.</span></h2></div>
+      <div class="mt-12 grid gap-4 md:grid-cols-2">
+        <div class="card reveal flex gap-5 rounded-2xl border border-line bg-panel/60 p-6"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-400/10 text-violet-300"><i data-lucide="audio-waveform" class="h-5 w-5"></i></div><div><h3 class="font-semibold">Classical & Carnatic music</h3><p class="mt-2 text-sm leading-6 text-slate-400">Symphonies, orchestral arrangements, and the structure and expression of Carnatic music.</p></div></div>
+        <div class="card reveal flex gap-5 rounded-2xl border border-line bg-panel/60 p-6"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent"><i data-lucide="sigma" class="h-5 w-5"></i></div><div><h3 class="font-semibold">Mathematics & abstraction</h3><p class="mt-2 text-sm leading-6 text-slate-400">Mathematical ideas, algorithms, theoretical computer science, and the joy of understanding why things work.</p></div></div>
+        <div class="card reveal flex gap-5 rounded-2xl border border-line bg-panel/60 p-6"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-400/10 text-sky-300"><i data-lucide="book-open" class="h-5 w-5"></i></div><div><h3 class="font-semibold">Books & ideas</h3><p class="mt-2 text-sm leading-6 text-slate-400">Self-learning, philosophy, psychology, and finding clearer ways to explain complicated subjects.</p></div></div>
+        <div class="card reveal flex gap-5 rounded-2xl border border-line bg-panel/60 p-6"><div class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-400/10 text-amber-300"><i data-lucide="gamepad-2" class="h-5 w-5"></i></div><div><h3 class="font-semibold">Games & virtual worlds</h3><p class="mt-2 text-sm leading-6 text-slate-400">Minecraft, Genshin Impact, and the systems, creativity, and emergent problem-solving found in games.</p></div></div>
+      </div>
+    </section>
+
+    <!-- Education / highlights -->
+    <section class="border-y border-line/70 bg-white/[0.015]">
+      <div class="mx-auto grid max-w-7xl gap-12 px-5 py-20 lg:grid-cols-2 lg:px-8">
+        <div class="reveal"><p class="mono-label text-xs text-accent">05 / Education</p><h2 class="mt-4 text-3xl font-bold">The foundation.</h2>
+          <div class="mt-8 border-l border-line pl-6">
+            <div class="relative"><span class="absolute -left-[1.63rem] top-1 h-3 w-3 rounded-full border-2 border-accent bg-ink"></span><p class="font-mono text-[10px] text-slate-600">AUG 2023 — PRESENT</p><h3 class="mt-2 text-lg font-semibold">B.Tech, Computer Science</h3><p class="mt-1 text-sm text-slate-400">National Institute of Technology Durgapur</p></div>
+            <div class="relative mt-9"><span class="absolute -left-[1.63rem] top-1 h-3 w-3 rounded-full border-2 border-line bg-ink"></span><p class="font-mono text-[10px] text-slate-600">2023</p><h3 class="mt-2 text-lg font-semibold">Class XII · CBSE</h3><p class="mt-1 text-sm text-slate-400">96.0%</p></div>
+            <div class="relative mt-9"><span class="absolute -left-[1.63rem] top-1 h-3 w-3 rounded-full border-2 border-line bg-ink"></span><p class="font-mono text-[10px] text-slate-600">2021</p><h3 class="mt-2 text-lg font-semibold">Class X · CBSE</h3><p class="mt-1 text-sm text-slate-400">94.2%</p></div>
+          </div>
+        </div>
+        <div class="reveal"><p class="mono-label text-xs text-accent">06 / Highlights</p><h2 class="mt-4 text-3xl font-bold">Milestones.</h2>
+          <div class="mt-8 grid gap-4 sm:grid-cols-2">
+            <div class="rounded-xl border border-line bg-panel/60 p-5"><p class="font-mono text-3xl font-bold text-accent">264</p><p class="mt-2 text-sm font-semibold">K-CET state rank</p><p class="mt-1 text-xs text-slate-600">2023</p></div>
+            <div class="rounded-xl border border-line bg-panel/60 p-5"><p class="font-mono text-3xl font-bold text-violet-300">5th</p><p class="mt-2 text-sm font-semibold">SOF MAT Olympiad</p><p class="mt-1 text-xs text-slate-600">2023</p></div>
+            <div class="rounded-xl border border-line bg-panel/60 p-5 sm:col-span-2"><p class="font-mono text-3xl font-bold text-sky-300">AIR 8848</p><p class="mt-2 text-sm font-semibold">JEE Advanced</p><p class="mt-1 text-xs text-slate-600">2023</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="scroll-mt-24 mx-auto max-w-7xl px-5 py-24 lg:px-8">
+      <div class="reveal relative overflow-hidden rounded-3xl border border-line bg-panel p-8 sm:p-12 lg:p-16">
+        <div class="absolute -right-20 -top-32 h-80 w-80 rounded-full bg-accent/[0.08] blur-3xl"></div>
+        <div class="relative max-w-3xl">
+          <p class="mono-label text-xs text-accent">07 / Get in touch</p>
+          <h2 class="mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl">Have an interesting problem?<br><span class="gradient-text">Let's build something.</span></h2>
+          <p class="mt-6 max-w-xl leading-7 text-slate-400">I'm always interested in thoughtful engineering conversations, challenging problems, and opportunities to build useful things with good people.</p>
+          <div class="mt-9 flex flex-wrap gap-3">
+            <a href="mailto:nchinthan04@gmail.com" class="inline-flex items-center rounded-full bg-accent px-5 py-3 text-sm font-bold text-ink hover:bg-lime-300"><i data-lucide="mail" class="mr-2 h-4 w-4"></i> Email me</a>
+            <a href="https://github.com/nchinthan" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-line px-5 py-3 text-sm font-semibold text-white hover:bg-white/5"><i data-lucide="github" class="mr-2 h-4 w-4"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/chinthan-n-269819290" target="_blank" rel="noreferrer" class="inline-flex items-center rounded-full border border-line px-5 py-3 text-sm font-semibold text-white hover:bg-white/5"><i data-lucide="linkedin" class="mr-2 h-4 w-4"></i> LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-line/70 px-5 py-8">
+    <div class="mx-auto flex max-w-7xl flex-col justify-between gap-3 text-xs text-slate-600 sm:flex-row sm:items-center lg:px-8">
+      <p>© <span id="year"></span> Chinthan N. Built with curiosity and a little bit of Tailwind.</p>
+      <a href="#home" class="inline-flex items-center gap-2 hover:text-accent">Back to top <i data-lucide="arrow-up" class="h-3.5 w-3.5"></i></a>
+    </div>
+  </footer>
+
+  <style>
+    .tag { display:inline-flex; border:1px solid #293241; border-radius:9999px; padding:.35rem .65rem; color:#9aa5b5; font:10px 'DM Mono',monospace; }
+  </style>
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuButton.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('hidden');
+      mobileMenu.classList.toggle('hidden');
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      menuButton.innerHTML = isOpen ? '<i data-lucide="menu" class="h-5 w-5"></i>' : '<i data-lucide="x" class="h-5 w-5"></i>';
+      lucide.createIcons();
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.innerHTML = '<i data-lucide="menu" class="h-5 w-5"></i>';
+      lucide.createIcons();
+    }));
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    const sections = [...document.querySelectorAll('main section[id]')];
+    const navLinks = [...document.querySelectorAll('.nav-link')];
+    const navObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+        }
+      });
+    }, { rootMargin: '-35% 0px -55% 0px' });
+    sections.forEach(section => navObserver.observe(section));
+  </script>
+</body>
+</html>
